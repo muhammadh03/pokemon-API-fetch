@@ -41,7 +41,7 @@ let tr2 = document.createElement('tr');
 
 
 let td1 = document.createElement('td');
-td1.innerHTML = ``;
+td1.innerHTML = `gloom`;
 // td1.setAttribute('id','table-body-1');
 
 let td2 = document.createElement('td');
@@ -66,10 +66,9 @@ tr2.append(td1,td2,td3,td4)
 document.body.append(container)
 
 async function pokeName(){
-    // let res = await fetch('https://pokeapi.co/api/v2/pokemon/')
     let res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0')
     let res1 = await res.json();
-    console.log(res1.results);
+    // console.log(res1.results);
     try {
         let nameData = '';
         res1.results.map((values) => {
