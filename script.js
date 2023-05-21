@@ -34,19 +34,19 @@ th5.innerHTML = 'Weight';
 
 /////////////// Body Section Start ///////////////////
 let tbody = document.createElement('tbody');
-// tbody.setAttribute('id','table-body-1');
+tbody.setAttribute('id','table-body-1');
 // tbody.setAttribute('id','table-body-2');
 
 let tr2 = document.createElement('tr');
 
 
 let td1 = document.createElement('td');
-td1.innerHTML = `muh`;
-td1.setAttribute('id','table-body-1');
+td1.innerHTML = ``;
+// td1.setAttribute('id','table-body-1');
 
 let td2 = document.createElement('td');
-// td2.innerHTML = `muh`;
-td2.setAttribute('id','table-body-2');
+td2.innerHTML = `muhammadh`;
+// td2.setAttribute('id','table-body-2');
 
 let td3 = document.createElement('td');
 td3.innerHTML = `Reciting`
@@ -66,17 +66,18 @@ tr2.append(td1,td2,td3,td4)
 document.body.append(container)
 
 async function pokeName(){
-    let res = await fetch('https://pokeapi.co/api/v2/pokemon/')
+    // let res = await fetch('https://pokeapi.co/api/v2/pokemon/')
+    let res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0')
     let res1 = await res.json();
-    // console.log(res1.results);
+    console.log(res1.results);
     try {
         let nameData = '';
         res1.results.map((values) => {
             nameData += `<tr>
             <td>${values.name}</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>gloom</td>
+            <td>gloom</td>
+            <td>gloom</td>
           </tr>`
         });
         document.getElementById('table-body-1').innerHTML = nameData;
@@ -86,26 +87,26 @@ async function pokeName(){
 }
 pokeName()
 
-async function pokeAbility(){
-    let res = await fetch('https://pokeapi.co/api/v2/ability/?limit=20&offset=20');
-    let res1 = await res.json();
-    // console.log(res1)
-    try {
-        let abilityData = '';
-        res1.results.map((values) => {
-            abilityData += `<tr>
-            <td>${values.name}</td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>`
-        });
-        document.getElementById('table-body-2').innerHTML = abilityData;
-    } catch (error) {
-        console.log(error)
-    }
-}
-pokeAbility()
+// async function pokeAbility(){
+//     let res = await fetch('https://pokeapi.co/api/v2/ability/?limit=20&offset=20');
+//     let res1 = await res.json();
+//     // console.log(res1)
+//     try {
+//         let abilityData = '';
+//         res1.results.map((values) => {
+//             abilityData += `<tr>
+//             <td>${values.name}</td>
+//             <td></td>
+//             <td></td>
+//             <td></td>
+//           </tr>`
+//         });
+//         document.getElementById('table-body-2').innerHTML = abilityData;
+//     } catch (error) {
+//         console.log(error)
+//     }
+// }
+// pokeAbility()
 
 ////////////////////////// Pagination ///////////////////////////
 let footerDiv = document.createElement('div');
