@@ -45,14 +45,14 @@ td1.innerHTML = ``;
 // td1.setAttribute('id','table-body-1');
 
 let td2 = document.createElement('td');
-td2.innerHTML = `muhammadh`;
+td2.innerHTML = `gloom`;
 // td2.setAttribute('id','table-body-2');
 
 let td3 = document.createElement('td');
-td3.innerHTML = `Reciting`
+td3.innerHTML = `gloom`
 
 let td4 = document.createElement('td');
-td4.innerHTML = `70`
+td4.innerHTML = `gloom`
 /////////////// Body Section End ///////////////////
 
 let outPut = document.createElement('div');
